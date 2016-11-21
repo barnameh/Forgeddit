@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+piasays:
+  text: I want to find another search engine
+  user_id: pia
+  link_id: google
+  vote: false
+
+adamsays:
+  text: They have a great collection
+  user_id: adam
+  link_id: dclibrary
+  vote: true

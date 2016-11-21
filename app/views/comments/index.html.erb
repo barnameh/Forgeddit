@@ -1,0 +1,22 @@
+<% if @link %>
+  <h1> Comments for </h1>
+  <a href="http://<%= @link.url %>" > <%= @link.url %> </a>
+  <% if current_user %>
+    <p>
+    <%= link_to " Add Your Comment ", new_link_comment_path(@link.id) %>
+    </P>
+  <% end %>
+<% elsif @user %>
+  <h1> Comments from <%= @user.name %> </h1>
+<% end %>
+
+<% @comments.each do |comment| %>
+    <h4>
+      <%= comment.id %> By:
+      <%= comment.user.name %>
+      <%= link_to " See More Comments ", user_comments_path(comment.user_id) %>
+      <p>
+        <%= comment.text %>
+      </p>
+    </h4>
+<% end %>

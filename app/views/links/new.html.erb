@@ -1,0 +1,14 @@
+<h1>Add a Link!</h1>
+
+<% @link.errors.full_messages.each do |error|%>
+  <div class="alert alert-danger">
+    <%= error %>
+  </div>
+  <% end %>
+
+<%= form_for @link do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url, class: 'form-control' %>
+  <hr>
+  <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
