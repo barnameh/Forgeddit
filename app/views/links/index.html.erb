@@ -3,7 +3,7 @@
 <% @links.each do |link| %>
     <h4>
       <%= link.id %>:
-      <a href="http://<%= link.url %>" > <%= link.url %> </a>
+      <a href= <%= link.url %> > <%= link.url %> </a>
       <%= link.comments.count %> comments
       <%= link_to " View Comments ", link_comments_path(link.id) %>
       <%= link_to " Add Comment ", new_link_comment_path(link.id) %>

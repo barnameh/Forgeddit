@@ -1,6 +1,6 @@
 <% if @link %>
   <h1> Comments for </h1>
-  <a href="http://<%= @link.url %>" > <%= @link.url %> </a>
+  <a href=<%= @link.url %> > <%= @link.url %> </a>
   <% if current_user %>
     <p>
     <%= link_to " Add Your Comment ", new_link_comment_path(@link.id) %>
