@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :links
   has_many :comments
   validates :name, presence: true, uniqueness: true
+  validates :password_hash, presence: true
 
   def password
     @_password ||= BCrypt::Password.new(password_hash)

@@ -16,20 +16,20 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new(link_id: params[:link_id], user_id: current_user.id)
+    @comment = Comment.new(link_id: params[:link_id], user_id: current_user.id, text: params[:text])
   end
 
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.user_id = current_user.id
     if @comment.save
-      redirect_to link_comments_path(params[:link_id])
+      redirect_to link_comments_path(params[:comment][:link_id])
     else
       render :new
     end
   end
 
   def comment_params
-    params.require(:comment).permit(:link_id, :user_id, :text)
+    params.require(:comment).permit(:link_id, :text)
   end
 end

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    session["message"] = "you signed up!"
     if @user.save
       session["current_user_id"] = @user.id
       redirect_to links_path

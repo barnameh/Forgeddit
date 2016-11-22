@@ -4,11 +4,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:name])
-
     if @user && @user.password == params[:password]
       # Does the logging in
       session["current_user_id"] = @user.id
-
       redirect_to links_path
     else
       @message = "User Name Does Not Exist! Try again or Sign Up"

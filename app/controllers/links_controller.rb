@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.all
+    @links = Link.all.order(created_at: :desc)
   end
 
   def new
@@ -10,9 +10,8 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     @link.user_id = current_user.id
-
     if @link.save
-      redirect_to "/links"
+      redirect_to links_path
     else
       render :new
     end

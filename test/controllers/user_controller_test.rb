@@ -1,14 +1,14 @@
 require 'test_helper'
 
 class UserControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get user_new_url
+  test "can show a form for a new user" do
+    get new_user_path
     assert_response :success
   end
 
-  test "should get create" do
-    get user_create_url
-    assert_response :success
+  test "can create a user" do
+    post users_path(user: { name: "Ava", password: "avaIshere" })
+    assert_response :redirect
+    assert_equal "Ava", User.last.name
   end
-
 end

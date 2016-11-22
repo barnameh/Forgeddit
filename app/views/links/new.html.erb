@@ -8,7 +8,7 @@
 
 <%= form_for @link do |f| %>
   <%= f.label :url %>
-  <%= f.text_field :url, class: 'form-control' %>
+  <%= f.url_field :url, class: 'form-control' %>
   <hr>
   <%= f.submit class: 'btn btn-primary' %>
   <% end %>

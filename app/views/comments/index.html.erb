@@ -4,7 +4,7 @@
   <% if current_user %>
     <p>
     <%= link_to " Add Your Comment ", new_link_comment_path(@link.id) %>
-    </P>
+    </p>
   <% end %>
 <% elsif @user %>
   <h1> Comments from <%= @user.name %> </h1>
