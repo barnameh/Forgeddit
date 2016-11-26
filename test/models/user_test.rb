@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "can create a user" do
+  test "can create a new user" do
     john = User.new(name: "John", password: "johnIshere")
     assert john.save!
   end
