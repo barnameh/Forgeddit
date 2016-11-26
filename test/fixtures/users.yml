@@ -2,8 +2,8 @@
 
 adam:
   name: Adam
-  password_hash: adamIshere
+  password: <%= BCrypt::Password.create("adamIshere") %>
 
 pia:
   name: pia
-  password_hash: piaIshere
+  password: <%= BCrypt::Password.create("piaIshere") %>
