@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161118152402) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text     "text"
     t.integer  "user_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20161118152402) do
     t.string   "password_hash"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
   end
 
 end

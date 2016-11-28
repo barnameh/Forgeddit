@@ -6,24 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-jay = User.create(name: "Jay", password: "allthesame")
-john = User.create(name: "John", password: "allthesame")
-jay_link = jay.links.create(url: "www.apple.com")
+jay = User.create!(name: "Jay", password: "allthesame")
+john = User.create!(name: "John", password: "allthesame")
+jay_link = jay.links.create!(url: "www.apple.com")
 john_comment = jay_link.comments.create(user_id: john.id, text: "everything is so expensive")
 
 users = []
 links = []
 10.times do
-  user = User.create(name: FFaker::Name.name, password: "allthesame")
+  user = User.create!(name: FFaker::Name.name, password: "allthesame")
   users << user
   10.times do
-    link = user.links.create(url: FFaker::Youtube.url)
+    link = user.links.create!(url: FFaker::Youtube.url)
     links << link
   end
 end
 
 links.each do |link|
   users.each do |user|
-    link.comments.create(user_id: user.id, text: FFaker::Tweet.body)
+    link.comments.create!(user_id: user.id, text: FFaker::Tweet.body)
   end
 end

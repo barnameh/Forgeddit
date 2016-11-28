@@ -14,9 +14,9 @@ class Link < ApplicationRecord
 
   def url=(in_url)
     if in_url.downcase.start_with?("http")
-      self.url = in_url
+      self[:url] = in_url
     else
-      self.url = "http://" + in_url
+      self[:url] = "http://" + in_url
     end
   end
 end
