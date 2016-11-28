@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-jay = User.create!(name: "Jay", password: "allthesame")
-john = User.create!(name: "John", password: "allthesame")
-jay_link = jay.links.create!(url: "www.apple.com")
-john_comment = jay_link.comments.create(user_id: john.id, text: "everything is so expensive")
+# jay = User.create!(name: "Jay", password: "allthesame")
+# john = User.create!(name: "John", password: "allthesame")
+# jay_link = jay.links.create!(url: "www.apple.com")
+# john_comment = jay_link.comments.create(user_id: john.id, text: "everything is so expensive")
 
 users = []
 links = []
